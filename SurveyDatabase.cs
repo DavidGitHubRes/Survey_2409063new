@@ -14,7 +14,7 @@ namespace Survey_2409063
         public SurveyDatabase(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Surveys>().Wait(); // Crea la tabla si no existe
+            _database.CreateTableAsync<Surveys>().Wait();
         }
 
         public Task<List<Surveys>> GetSurveysAsync()
