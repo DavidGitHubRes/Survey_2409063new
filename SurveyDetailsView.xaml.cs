@@ -56,27 +56,6 @@ public partial class SurveyDetailsView : ContentPage
         await Navigation.PopAsync();
     }
 
-    private async void AcceptButton_Clicked(object sender, EventArgs e)
-    {
-        if (string.IsNullOrWhiteSpace(NameEntry.Text) || string.IsNullOrWhiteSpace(FavoriteTeamLabel.Text))
-        {
-            return;
-        }
-
-        var newSurvey = new Surveys()
-        {
-            Name = NameEntry.Text,
-            Birthdate = Birthdatepicker.Date,
-            FavoriteTeam = FavoriteTeamLabel.Text
-        };
-
-        await _database.SaveSurveyAsync(newSurvey);
-
-        MessagingCenter.Send((ContentPage)this,
-        Messages.NewSurveyComplete, newSurvey);
-
-        await Navigation.PopAsync();
-    }
 
     private async void Cancelar(object sender, EventArgs e)
     {
