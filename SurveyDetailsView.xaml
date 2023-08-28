@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Survey_2409063.SurveyDetailsView"
+             Title="Nueva encuesta">
+
+    <VerticalStackLayout>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout>
+                <Label Text="Nombre"/>
+                <Entry x:Name="NameEntry"/>
+                <Label Text="Fecha de nacimiento"/>
+                <DatePicker x:Name="Birthdatepicker"/>
+                <Label Text="Equipo favorito"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="FavoriteTeamLabel"/>
+                    <Button Grid.Column="1" Text="..." Clicked="FavoriteTeamButton_Clicked"/>
+                    <Button Text="Guardar" BackgroundColor="AntiqueWhite" Clicked="SaveSurveyButton_Clicked" />
+                </Grid>
+            </StackLayout>
+            
+        </Grid>
+        <Button Text="Cancelar" BackgroundColor="AntiqueWhite" Clicked="Cancelar" />
+    </VerticalStackLayout>
+</ContentPage>
